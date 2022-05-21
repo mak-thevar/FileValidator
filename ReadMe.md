@@ -1,4 +1,7 @@
-﻿# FileValidator
+﻿![Build Status](https://github.com/mak-thevar/FileValidator/actions/workflows/dotnet.yml/badge.svg)
+[![LinkedIn](https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555)](https://www.linkedin.com/in/mak11/)
+
+# FileValidator
 This library adds an extension method to [FileInfo](https://docs.microsoft.com/en-us/dotnet/api/system.io.fileinfo) & [IFormFile](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.http.iformfile) to validate the file based on thier configuration(s).
 
 
