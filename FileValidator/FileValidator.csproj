@@ -7,6 +7,7 @@
     <ApplicationIcon>check-in.ico</ApplicationIcon>
     <SignAssembly>False</SignAssembly>
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+    <Version>1.0.1</Version>
     <Authors>Muthukumar Thevar</Authors>
     <Description>This library adds an extension method to FileInfo &amp; IFormFile to validate the file based on thier configuration(s).</Description>
     <PackageProjectUrl>https://github.com/mak-thevar/FileValidator</PackageProjectUrl>
@@ -15,6 +16,7 @@
     <RepositoryUrl>https://github.com/mak-thevar/FileValidator</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>Validate File, File Validator, dotnet core, Image file validation, FileInfo, IFormFile</PackageTags>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -27,6 +29,10 @@
       <PackagePath>\</PackagePath>
     </None>
     <None Include="..\check-in.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+     <None Include="..\LICENSE">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
