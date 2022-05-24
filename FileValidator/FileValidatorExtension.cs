@@ -14,33 +14,25 @@ namespace FileValidator
         }
         public static bool IsValidFile(this IFormFile file, FileType[]? allowedFileTypes = null)
         {
-            return IsValidFile(new FileInfo(file.FileName), allowedFileTypes);
+            return FileValidator(file.FileName, file.Length, allowedFileTypes);
         }
 
         public static bool IsValidFile(this FileInfo fileInfo, FileType[]? allowedFileTypes = null)
         {
+            return FileValidator(fileInfo.Name, fileInfo.Length, allowedFileTypes);
+        }
 
-            var fileType = DetermineTheFileType(fileInfo.FullName);
-            if(fileType is null)
+        private static bool FileValidator(string fileName,long fileLength, FileType[]? allowedFileTypes = null)
+        {
+            var fileType = DetermineTheFileType(fileName);
+            if (fileType is null)
                 return false;
 
             if (allowedFileTypes is not null)
                 if (!allowedFileTypes.Contains(fileType.Value))
                     return false;
 
-            switch (fileType.Value)
-            {
-                case FileType.Document:
-                    return validatorConfig.ValidateDocumentFile(fileInfo);
-                case FileType.Video:
-                    return validatorConfig.ValidateVideoFile(fileInfo);
-                case FileType.Audio:
-                    return validatorConfig.ValidateAudioFile(fileInfo);
-                case FileType.Image:
-                    return validatorConfig.ValidateImageFile(fileInfo);
-                default:
-                    return false;
-            }
+            return validatorConfig.ValidateTheFile(fileType.Value, fileName, fileLength);
         }
 
         private static FileType? DetermineTheFileType(string fileName)
