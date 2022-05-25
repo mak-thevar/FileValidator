@@ -14,7 +14,7 @@
         /// <param name="videoMaxBytes">Default 50 Mb</param>
         /// <param name="audioMaxBytes">Default 5 Mb</param>
         /// <param name="audioMinBytes">Default 10 Kb</param>
-        public FileValidatorConfiguration(int imageMinBytes = 512, int imageMaxBytes = 6 * 1024 * 1024, int documentMinBytes = 100, int documentMaxBytes = 10 * 1024 * 1024, int videoMinBytes = 1024 * 1024, int videoMaxBytes = 50 * 1024 * 1024, int audioMaxBytes = 1024 * 10, int audioMinBytes = 5 * 1024 * 1024)
+        public FileValidatorConfiguration(long imageMinBytes = 512, long imageMaxBytes = 6 * 1024 * 1024, long documentMinBytes = 100, long documentMaxBytes = 10 * 1024 * 1024, long videoMinBytes = 1024 * 1024, long videoMaxBytes = 50 * 1024 * 1024, long audioMaxBytes = 1024 * 10, long audioMinBytes = 5 * 1024 * 1024)
         {
             this.ImageMinimumBytes = imageMinBytes;
             this.ImageMaximumBytes = imageMaxBytes;
