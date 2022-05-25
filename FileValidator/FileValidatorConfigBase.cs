@@ -3,14 +3,14 @@
     public abstract class FileValidatorConfigBase
     {
 
-        public int ImageMinimumBytes { get; set; } = 512;
-        public int ImageMaximumBytes { get; set; }
-        public int DocumentMinimumBytes { get; set; }
-        public int DocumentMaxBytes { get; set; }
-        public int VideoMinimumBytes { get; set; }
-        public int VideoMaxBytes { get; set; }
-        public int AudioMinimumBytes { get; set; }
-        public int AudioMaxBytes { get; set; }
+        public long ImageMinimumBytes { get; set; } = 512;
+        public long ImageMaximumBytes { get; set; }
+        public long DocumentMinimumBytes { get; set; }
+        public long DocumentMaxBytes { get; set; }
+        public long VideoMinimumBytes { get; set; }
+        public long VideoMaxBytes { get; set; }
+        public long AudioMinimumBytes { get; set; }
+        public long AudioMaxBytes { get; set; }
 
         public List<string> ImageMimeTypes { get; set; } = new List<string>
                                    {

@@ -7,7 +7,7 @@
     <ApplicationIcon>check-in.ico</ApplicationIcon>
     <SignAssembly>False</SignAssembly>
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
-    <Version>1.0.2</Version>
+    <Version>1.0.3</Version>
     <Authors>Muthukumar Thevar</Authors>
     <Description>This library adds an extension method to FileInfo &amp; IFormFile to validate the file based on thier configuration(s).</Description>
     <PackageProjectUrl>https://github.com/mak-thevar/FileValidator</PackageProjectUrl>

@@ -58,6 +58,7 @@ namespace FileValidator.Tests
         [Test]
         public void TestByRemovingAType()
         {
+            //Arrange
             var fileInfo = new FileInfo(Path.Combine(_fileDirectory, "f.pdf"));
             var fileValidatorConfig = new FileValidatorConfiguration();
             fileValidatorConfig.DocumentFileExtensins.Remove(".pdf");
@@ -65,6 +66,22 @@ namespace FileValidator.Tests
 
             //Act
             var isValidFile = fileInfo.IsValidFile(new FileType[] { FileType.Image });
+
+            //Assert
+            Assert.IsFalse(isValidFile);
+        }
+
+        [Test]
+        public void TestMaxFileSize()
+        {
+            //Arrange 
+            var fileInfo = new FileInfo(Path.Combine(_fileDirectory, "f.txt"));
+            var fileValidatorConfig = new FileValidatorConfiguration();
+            fileValidatorConfig.DocumentMaxBytes = 100; //100 bytes
+            FileValidatorExtension.UpdateDefaultConfiguration(fileValidatorConfig);
+
+            //Act
+            var isValidFile = fileInfo.IsValidFile();
 
             //Assert
             Assert.IsFalse(isValidFile);
