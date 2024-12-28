@@ -25,6 +25,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="check-in.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="check-in.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="..\ReadMe.md">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
