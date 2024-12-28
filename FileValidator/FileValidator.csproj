@@ -24,12 +24,9 @@
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
 
-  <ItemGroup>
-    <None Remove="check-in.png" />
-  </ItemGroup>
 
   <ItemGroup>
-    <Content Include="check-in.png">
+    <Content Include="check-in.png" Pack="true">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
