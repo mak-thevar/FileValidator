@@ -2,7 +2,9 @@
 [![LinkedIn](https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555)](https://www.linkedin.com/in/mak11/)
 
 # FileValidator
-This library adds an extension method to [FileInfo](https://docs.microsoft.com/en-us/dotnet/api/system.io.fileinfo) & [IFormFile](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.http.iformfile) to validate the file based on thier configuration(s).
+FileValidator is a .NET library that adds extension methods to both [FileInfo](https://docs.microsoft.com/en-us/dotnet/api/system.io.fileinfo) and [IFormFile](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.http.iformfile). It helps you verify files against certain rules, such as size limits, allowed extensions, and MIME types. By default, it checks for documents, images, videos, and audio files, but you can easily customize it.
+
+
 
 
 ## Installation
@@ -29,29 +31,32 @@ This library adds an extension method to [FileInfo](https://docs.microsoft.com/e
       
   }
 ```
-#### ⚙️Using the FileInfo Class
+#### ⚙️Using FileInfo Directly
 ```csharp
-var fileInfo = new FileInfo("C:/mypath/document.pdf");
+var fileInfo = new FileInfo("C:/mypath/myimage.jpg");
 var isValid = fileInfo.IsValidFile();
 //If you want to only validate the Images then you can pass the allowed FileType[] parameter.
-var checkValidImage = fileInfo.IsValidFile(new FileType[] { FileType.Image })
+var checkValidImage = fileInfo.IsValidFile([ FileType.Image ])
 ```
 
-#### ⚙️Updating the default configuration (add/remove allowed extensions & MIME types)
+#### ⚙️Updating the default configuration (You can add or remove file extensions and MIME types as needed)
 ```csharp
 var fileInfo = new FileInfo("C:/mypath/document.pdf");
 
-//If you want to allow json documents then update the configuration
+// Create a configuration and allow JSON as a document type
 var fileValidatorConfig = new FileValidatorConfiguration();
 fileValidatorConfig.DocumentFileExtensins.Add(".json");
 fileValidatorConfig.DocumentMimeTypes.Add("application/json");
 FileValidatorExtension.UpdateDefaultConfiguration(fileValidatorConfig);
 
-var isValid = fileInfo.IsValidFile(); //Returns true
+// Now .json files will pass validation as documents
+bool isValid = fileInfo.IsValidFile(); 
 
-//If you want to remove any existing valid extension then you can remove the extension from the configuration
-fileValidatorConfig.ImmageFileExtensions.Remove(".gif"); //This will return false on any gif file.
+// Removing a known file type (for example, GIF in images)
+fileValidatorConfig.ImmageFileExtensions.Remove(".gif");
 FileValidatorExtension.UpdateDefaultConfiguration(fileValidatorConfig);
+
+// GIF files will now fail validation
 
 ```
 
@@ -63,8 +68,7 @@ Feel free to request for any changes or any additional features.
 Distributed under the MIT License. See [LICENSE](https://github.com/mak-thevar/FileValidator/blob/main/LICENSE) for more information.
 
 ## Contact
-Name: [Muthukumar Thevar](https://www.linkedin.com/in/mak11/)
-
-Email: mak.thevar@outlook.com
-
-Project Link: https://github.com/mak-thevar/FileValidator
+- Name: [Muthukumar Thevar](https://www.linkedin.com/in/mak11/)
+- Email: mak.thevar@outlook.com
+- Portfolio: https://mak-thevar.dev
+- Project Link: https://github.com/mak-thevar/FileValidator
