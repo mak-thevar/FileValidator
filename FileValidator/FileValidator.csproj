@@ -26,8 +26,7 @@
 
 
   <ItemGroup>
-    <Content Include="check-in.png" Pack="true">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <Content Include=".\check-in.png" Pack="true" PackagePath="">
     </Content>
   </ItemGroup>
 
